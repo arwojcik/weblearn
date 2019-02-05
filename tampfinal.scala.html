@@ -1,0 +1,14 @@
+@(title: String, content: Html, h1data: String = "")
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@title</title>
+</head>
+<body>
+    @if (h1data == "")  /*empty*/ else <h1>@h1data</h1>
+
+    @content
+</body>
+</html>

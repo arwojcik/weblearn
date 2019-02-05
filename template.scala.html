@@ -1,0 +1,22 @@
+@(title: String, h1data: Option[String], content: Html) //or @(title: String, content: Html, h1data: String = "")
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@title</title>
+</head>
+<body>
+    @h1data match {
+        case "" => \\ nothing (no tags)
+        case data: String => <h1>@data</h1>
+        case None => \\ nothing (no tags)
+    }
+    
+    <h1>@h1data.getOrElse("")</h1> 
+
+    @if (h1data == "") "" else <h1>@h1data</h1>
+
+    @content
+</body>
+</html>
