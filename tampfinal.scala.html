@@ -7,7 +7,7 @@
     <title>@title</title>
 </head>
 <body>
-    @if (h1data == "")  /*empty*/ else <h1>@h1data</h1>
+    @(if (h1data == "")  Html() /*empty*/ else <h1>@h1data</h1>) @* it is questionable if using Html() is good idea but it is propably the best choice *@
 
     @content
 </body>

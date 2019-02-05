@@ -7,15 +7,15 @@
     <title>@title</title>
 </head>
 <body>
-    @h1data match {
+    @(h1data match {
         case "" => \\ nothing (no tags)
         case data: String => <h1>@data</h1>
         case None => \\ nothing (no tags)
-    }
+    })
     
     <h1>@h1data.getOrElse("")</h1> 
 
-    @if (h1data == "") "" else <h1>@h1data</h1>
+    @(if (h1data == "") Html() else <h1>@h1data</h1>)
 
     @content
 </body>
